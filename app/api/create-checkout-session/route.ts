@@ -34,7 +34,6 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-
     const stripe = new Stripe(secretKey);
     const origin =
       process.env.NEXT_PUBLIC_SITE_URL ||
