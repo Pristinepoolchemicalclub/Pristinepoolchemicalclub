@@ -63,6 +63,16 @@ const [zip, setZip] = useState("");
           <label>Full name<input required autoComplete="name" value={name} onChange={e => setName(e.target.value)} placeholder="Your name"/></label>
           <label>Email address<input required type="email" autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com"/></label>
           <label>Phone number<input required type="tel" autoComplete="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="(555) 555-5555"/></label>
+          
+<label>Phone number<input required type="tel" autoComplete="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="(555) 555-5555"/></label>
+
+<label>Street Address<input required value={street} onChange={e => setStreet(e.target.value)} placeholder="Street address"/></label>
+<label>City<input required value={city} onChange={e => setCity(e.target.value)} placeholder="City"/></label>
+<label>State<input required value={state} onChange={e => setState(e.target.value)} placeholder="TX"/></label>
+<label>ZIP Code<input required value={zip} onChange={e => setZip(e.target.value)} placeholder="ZIP code"/></label>
+
+{error && <p className="error" role="alert">{error}</p>}
+
           {error && <p className="error" role="alert">{error}</p>}
           <button className="submit" type="submit" disabled={loading}>{loading ? "Connecting to secure checkout..." : `Continue with ${plans.find(p => p.id === plan)?.name} — $${plans.find(p => p.id === plan)?.price}/mo`}</button>
           <p className="fineprint">Secure payment handled by Stripe. Your membership renews monthly. No sales tax is added by this checkout.</p>
