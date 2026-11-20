@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       }],
       subscription_data: { metadata: { customer_name: name, customer_phone: phone, membership_plan: planKey } },
       metadata: { customer_name: name, customer_phone: phone, membership_plan: planKey },
-      success_url: `${origin}/?checkout=success`,
+      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?checkout=cancelled`,
       // Automatic tax is intentionally not enabled.
     });
