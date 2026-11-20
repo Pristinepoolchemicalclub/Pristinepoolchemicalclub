@@ -20,6 +20,13 @@ export async function POST(request: Request) {
       );
     }
 
+if (!secretKey.startsWith("sk_live_")) {
+  return NextResponse.json(
+    { error: "Live Stripe payments are not configured." },
+    { status: 503 }
+  );
+}
+
     const body = await request.json();
     const planKey = body.plan as keyof typeof plans;
     const selected = plans[planKey];
