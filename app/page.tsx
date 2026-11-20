@@ -13,6 +13,10 @@ export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [street, setStreet] = useState("");
+const [city, setCity] = useState("");
+const [state, setState] = useState("TX");
+const [zip, setZip] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -24,7 +28,7 @@ export default function Home() {
       const response = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, name, email, phone }),
+      body: JSON.stringify({ plan, name, email, phone, street, city, state, zip }),
       });
       const raw = await response.text();
       let data: { url?: string; error?: string };
