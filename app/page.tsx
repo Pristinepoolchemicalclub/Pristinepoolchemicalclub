@@ -42,7 +42,15 @@ const [zip, setZip] = useState("");
     }
   }
 
-  return <main>
+  
+return <main style={{
+  minHeight: "100vh",
+  backgroundImage: `linear-gradient(rgba(0, 40, 80, 0.75), rgba(0, 100, 150, 0.65)), url("https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=2000&q=85")`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundAttachment: "fixed"
+}}>
+
     <header className="topbar"><a className="brand" href="/">PRISTINE <span>POOL CHEMICAL CLUB</span></a><span className="tag">POOL CARE, SIMPLIFIED</span></header>
     <section className="hero">
       <p className="eyebrow">THE PRISTINE POOL CHEMICAL CLUB</p>
